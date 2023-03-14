@@ -13,9 +13,13 @@ https://www.mockaroo.com/1da68c30
 https://my.api.mockaroo.com/transaction_records.json?key=1e236000
 
 ## Screenshots
-
+### All Transactions
 ![All Transactions](https://github.com/sudharshanreddyam/rewards-calculator/blob/master/screenshots/AllTransactions.png "All Transactions")
+
+### Summary By Month
 ![Summary By Month](https://github.com/sudharshanreddyam/rewards-calculator/blob/master/screenshots/Summary.png "Summary By Month")
+
+### Monthly User Transaction
 ![Monthly User Transaction](https://github.com/sudharshanreddyam/rewards-calculator/blob/master/screenshots/MonthlyUserTransaction.png "Monthly User Transaction")
 
 ## Development server
