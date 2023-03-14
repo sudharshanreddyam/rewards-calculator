@@ -1,0 +1,61 @@
+<div class="summary-title">Quarterly Transaction Summary of {{ username }}</div>
+<table mat-table [dataSource]="monthwiseSummaryData">
+  <ng-container matColumnDef="month">
+    <th mat-header-cell *matHeaderCellDef>Month</th>
+    <td mat-cell *matCellDef="let element">{{ getMonthName(element.month) }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="transactions-value">
+    <th mat-header-cell *matHeaderCellDef>Transaction Value</th>
+    <td mat-cell *matCellDef="let element">{{ element.transactionValue }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="rewards">
+    <th mat-header-cell *matHeaderCellDef>Rewards Earned</th>
+    <td mat-cell *matCellDef="let element">{{ element.rewardsEarned }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="monthdata">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="showMonthlyTransactionList(element.month)">
+        View transactions
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="summaryTableColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: summaryTableColumns"></tr>
+</table>
+
+
+<div *ngIf="monthTransactionData.length > 0" class="month-wise-transaction">
+    <div class="month-transactions-title">
+      Transaction for the Month: {{getMonthName(getMonthNumber(monthTransactionData[0].transactionDate))}}
+    </div>
+
+    <table mat-table [dataSource]="monthTransactionData">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element; let i = index;">{{ i + 1}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="transaction-value">
+        <th mat-header-cell *matHeaderCellDef>Transaction Amount</th>
+        <td mat-cell *matCellDef="let element">{{ element.transactionValue }}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="rewards">
+        <th mat-header-cell *matHeaderCellDef>Rewards Earned</th>
+        <td mat-cell *matCellDef="let element">{{ element.rewardsEarned }}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Transaction Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.transactionDate }}</td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="monthTransactionTableColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: monthTransactionTableColumns"></tr>
+    </table>
+</div>

@@ -1,6 +1,16 @@
 # RewardsCalculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+This application is developed considering the backend API will provide data of all the transactions. 
+
+## MockData
+
+Mock data was prepared by using Mockaroo.com. Here is the schema prepared and used for generating the mockdata.
+
+### Schema
+https://www.mockaroo.com/1da68c30
+
+### Mock API
+https://my.api.mockaroo.com/transaction_records.json?key=1e236000
 
 ## Development server
 

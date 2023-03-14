@@ -1,0 +1,15 @@
+:host {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  table {
+    width: 70%;
+    font-size: 24px;
+    font-family: monospace;
+    border: 1px solid;
+    tr {
+      font-size: 24px;
+    }
+  }
+}
